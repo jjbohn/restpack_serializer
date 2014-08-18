@@ -40,7 +40,7 @@ module RestPack::Serializer::SideLoading
 
         links[link_key] = {
           :href => RestPack::Serializer.config.href_prefix + href,
-          :type => association.plural_name.to_sym
+          :type => association.class_name.downcase.pluralize.to_sym,
         }
       end
 
